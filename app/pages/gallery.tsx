@@ -1,13 +1,27 @@
 
+import {loadData} from "includes/system"
 
 const [items, setItems] = useState([])
 const [intro, setIntro] = useState("It works but as a state!")
+let list = <div>nothing</div>;
 
-//onready hook, js fetch -> useState([])
+//data loading
+//when component ready
+useEffect(() => {
+    const response = await fetch('www.api.inaturalist.org/v1/observations');
+    const result = await response.json();
+    setItems(result);
 
-//React foreach
+    //React foreach
+    list = items.foreEach((item) =>  {
+        <div>item</div>
+    }}
+
+  }, []); 
+
+
 
 export default function Gallery() {
 
-  return <h1>{intro}</h1>;
+  return <div>{list}</div>;
 }
