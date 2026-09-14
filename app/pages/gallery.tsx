@@ -5,6 +5,8 @@ const [intro, setIntro] = useState("It works but as a state!")
 
 //onready hook, js fetch -> useState([])
 
+//React foreach
+
 export default function Gallery() {
 
   return <h1>{intro}</h1>;
